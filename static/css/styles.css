@@ -1,0 +1,213 @@
+/* 公共样式文件 */
+body{overflow:hidden;max-width: 10.0rem;margin: 0 auto;position:relative;font-family:"微软雅黑", Arial, Helvetica, sans-serif; 
+}
+.wrap{width: 100%;max-width: 640px;background: #fff;overflow:hidden;}
+.block{ height: 0.1875rem; background: #eee; }
+.clear::after {content: '';display: block;visibility: hidden;overflow: hidden;height: 0;clear: both;}
+.clear2 {content: '';display: block;visibility: hidden;overflow: hidden;height: 0;clear: both;}
+img{ vertical-align: top;border: 0; max-width:100%;margin: 0 auto;}
+.fl{ float: left; }
+.fr{ float: right; }
+.flex{display:box;display: -moz-box;display: -webkit-flex;display: -webkit-box;display: -ms-flexbox;display: flex;}
+.flex dd,.flex li{flex: 1;}
+a{color:#333;}
+.hs{background: #f5f5f5 !important;}
+.bs{background: #ffffff !important;}
+
+/** 首页头部logo **/
+.logo{ height:1.25rem; }
+.logo img{display: block;width: 3.96875rem;padding: 0.3125rem 0.421875rem; height: 0.5625rem; margin: auto;}
+
+.logo2{padding: 0; height:1.25rem; position: fixed;width: 100%;max-width: 10.0rem; background: #f5f5f5;    z-index: 9999; border-bottom: 0.03125rem solid #cccccc;}
+.logo2 .logoImg{display: block; float: left; width: 3.96875rem; height: 0.5625rem; margin: auto;padding: 0.3125rem 0 0.3125rem 0.28125rem;}
+.logo2 .tle{display: block; float: left; width: 2.984375rem; height: 0.453125rem;padding: 0.3125rem 0 0.3125rem 0.46875rem;}
+.logo2 .anNiu{display: block; float:right; width: 0.609375rem; height: 0.453125rem;padding: 0.3125rem 0.28125rem 0 0.3125rem;}
+.logo2 .logo_nav{position:absolute;top:1.28125rem;left: 0.0rem;width: 10.0rem;height: 3.828125rem; background: #fff;padding: 0.3125rem 0;}
+.logo2 .logo_nav dl{border-bottom: 0.03125rem solid #e7e7e7; padding: 0.28125rem 0;}
+.logo2 .logo_nav dl:last-child{border-bottom:none;}
+.logo2 .logo_nav dl dd{background: url(./assets/tgb11.png) right center no-repeat;}
+.logo2 .logo_nav dl dd:last-child{background: none;}
+.logo2 .logo_nav dl dd a{display: block;}
+.logo2 .logo_nav dl dd a img{display: block;width: 0.78125rem;height: 0.78125rem;}
+.logo2 .logo_nav dl dd a span{display: block;text-align: center; font-size: 0.46875rem; color: #c0c0c0;height: 0.390625rem; line-height: 0.390625rem; margin: 0.1875rem auto;}
+
+/** 首页banner **/
+.banner{height:3.484375rem; background: url(./assets/tgb03.jpg) no-repeat; background-size: cover; }
+.banner p:nth-child(1){color: #fff; text-align: center;font-size: 0.46875rem;font-weight: bold; padding-top: 0.390625rem; padding-bottom: 0.3125rem;}
+.banner p:nth-child(2){width: 9.203125rem; margin:0 0.375rem 0.234375rem; background:#f9564d; height: 1.078125rem;border-radius: 0.78125rem;}
+.banner p:nth-child(2) input{display: block;width:6.921875rem;height: 0.984375rem; font-size: 0.40625rem;border: none;  margin: 0.046875rem 0 0.046875rem 0.0625rem; border-radius: 0.78125rem 0 0 0.78125rem;line-height: 0.984375rem; text-indent: 1em;}
+.banner p:nth-child(2) a{display:block; width: 2.21875rem;height: 0.984375rem;font-size: 0.40625rem; color:#fff; text-align: center; line-height: 0.984375rem; margin: 0.046875rem 0;}
+.banner p:nth-child(3){font-size: 0.390625rem; color:#fff; text-align: center;}
+
+/** 首页导航 **/
+.navs{padding:0.46875rem 0.15625rem;background: #fff;}
+.navs dd{flex: 1; background: url(./assets/tgb11.png) right center no-repeat; background-size: 0.046875rem 0.890625rem;}
+.navs dd:last-child{background: none;}
+.navs dd img{display: block;width:1.109375rem; height: 1.109375rem;margin-bottom: 0.234375rem; }
+.navs dd span{font-size: 0.359375rem; text-align: center; color:#000000;display: block; height: 0.390625rem; line-height: 0.390625rem;}
+
+.banner2{height: 2.75rem;}
+.banner2 img{display: block;width:100%;}
+
+
+/** 首页-需求市场 **/
+.scxq{margin: 0.390625rem 0; padding: 0.15625rem 0 0.3125rem; border-bottom: 0.078125rem solid #e0e0e0;}
+.scxq .scxq_nav{height: 0.625rem; line-height: 0.625rem; border-bottom: 0.015625rem solid #e0e0e0;font-size: 0.390625rem; padding:0 0.3125rem;}
+.scxq .scxq_nav span{display: block; height: 0.46875rem; border-left: 0.078125rem solid #fa6163; text-indent: 0.5em;line-height: 0.46875rem;}
+.scxq .scxq_nav a{display: block;width:1.5625rem; height: 0.46875rem; line-height: 0.46875rem; text-align: center; padding-left: 0.390625rem; background:url(./assets/tgb12.png) left center no-repeat; background-size: 0.3125rem 0.3125rem;}
+.scxq ul{}
+.scxq ul li{padding:0.15625rem 0.390625rem; border-bottom: 0.015625rem dashed #e6e6e6;}
+.scxq ul li:last-of-type{border-bottom:none;}
+.scxq ul li p:nth-child(1){font-size: 0.375rem;color:#337bb5; line-height: 0.421875rem; margin-bottom: 0.078125rem;}
+.scxq ul li p:nth-child(1) span{display: block; height: 0.421875rem; font-size: 0.40625rem; color: #fff;background:#fa6163; text-align: center; padding:0.03125rem;}
+.scxq ul li p:nth-child(1) samp{display: block; height: 0.421875rem; line-height: 0.484375rem; padding-left: 0.15625rem;}
+.scxq ul li p:nth-child(2){font-size: 0.328125rem; color:#797979;}
+
+/*--需求市场2--*/
+.scxq2{margin: 0.390625rem 0; padding: 0.15625rem 0 0.3125rem; border-bottom: 0.078125rem solid #e0e0e0;}
+.scxq2 .scxq_nav{height: 0.625rem; line-height: 0.625rem; border-bottom: 0.015625rem solid #e0e0e0;font-size: 0.390625rem; padding:0 0.3125rem;}
+.scxq2 .scxq_nav span{display: block; height: 0.46875rem; border-left: 0.078125rem solid #fa6163; text-indent: 0.5em;line-height: 0.46875rem;}
+.scxq2 .scxq_nav a{display: block;width:1.5625rem; height: 0.46875rem; line-height: 0.46875rem; text-align: center; padding-left: 0.390625rem; background:url(./assets/tgb12.png) left center no-repeat; background-size: 0.3125rem 0.3125rem;}
+.scxq2 ul{}
+.scxq2 ul li{padding:0.15625rem 0.390625rem; border-bottom: 0.03125rem dashed #e6e6e6;}
+.scxq2 ul li::after {content: '';display: block;visibility: hidden;overflow: hidden;height: 0;clear: both;}
+.scxq2 ul li:last-of-type{border-bottom:none;}
+.scxq2 ul li p:nth-child(1){font-size: 0.375rem;color:#337bb5; line-height: 0.421875rem; margin-bottom: 0.078125rem;width: 85%;float: left;}
+.scxq2 ul li p:nth-child(1) span{display: block; height: 0.421875rem; font-size: 0.40625rem; color: #fff;background:#fa6163; text-align: center; padding:0.03125rem;}
+.scxq2 ul li p:nth-child(1) samp{display: block; height: 0.421875rem; line-height: 0.484375rem; padding-left: 0.15625rem;}
+.scxq2 ul li p:nth-child(2){width: 85%;float: left;font-size: 0.328125rem; color:#797979;}
+.scxq2 ul li a:nth-child(3){width: 14%;float: left;font-size: 0.390625rem;display: block;
+    height: 0.421875rem;
+     line-height:  0.421875rem;
+    color: #fff;
+    background: #fa6163;
+    text-align: center;
+    padding: 0.03125rem; margin-top: -0.234375rem;}
+
+/**头部搜索框**/
+.need{padding: 0.15625rem 1.15625rem;  margin: auto; border-bottom: 0.015625rem solid #ccc; }
+.need p{border-radius: 0.78125rem; border: 0.015625rem solid #ccc;height: 0.9375rem;}
+.need .tad{float: left; display: block; width: 1.40625rem; text-align: center;   line-height: 0.625rem; font-size:0.390625rem; background: none; background-size: 0.234375rem 0.234375rem; border: none;  height: 100%; text-indent: 0.078125rem;}
+.need .tad option{ text-align: center;font-size:0.390625rem;}
+.need .text{float: left; width:5.0rem; border: none; background: none; height: 0.625rem; text-indent: .5em; font-size:0.21875rem; color: #767676;    height: 100%;}
+.need .simt{float: left; display: block; width: 1.25rem; height:0.9375rem;}
+.need .simt img{display: block; width:0.359375rem; height: 0.359375rem; margin: 0.28125rem auto;}
+
+
+
+
+
+
+
+/** 登陆注册页 **/
+.dlzc{width: 6.0rem; height: 1.25rem; margin:1.953125rem auto auto; background: #fff;border-radius: 0.15625rem;}
+.dlzc dd{text-align: center; color: #7f7f7f; line-height: 1.25rem; font-size: 0.46875rem;}
+.dlzc dd.on:last-of-type{border-radius:0 0.15625rem 0.15625rem 0;}
+.dlzc dd.on{background: #00b38b; color: #fff;border-radius: 0.15625rem 0 0 0.15625rem ;}
+
+.denglu,.zhuce{padding: 0.671875rem 0.46875rem;}
+.denglu .dl_tel{width: 100%; height: 1.359375rem; text-indent: 1em; border:none; line-height: 1.359375rem; font-size: 0.46875rem;margin-bottom: 0.03125rem; border-radius: 0.15625rem 0.15625rem 0 0; margin-top: 0.859375rem;}
+.denglu .dl_password{width: 100%;height: 1.359375rem; text-indent: 1em; border:none; line-height: 1.359375rem; font-size: 0.46875rem;border-radius:  0 0 0.15625rem 0.15625rem;}
+.denglu .dl_simt{display: block; width: 100%;border-radius: 0.15625rem; background: #00b38b; color: #fff; text-align: center;height: 1.359375rem;line-height: 1.359375rem; font-size: 0.546875rem; margin: 0.625rem 0 0.46875rem;}
+.denglu .dl_back{display: block; width: 100%;text-align: right; font-size: 0.46875rem; height: 0.546875rem;line-height: 0.546875rem;}
+
+.zhuce .zc_tel{width: 100%; height: 1.359375rem; text-indent: 1em; border:none; line-height: 1.359375rem; font-size: 0.46875rem;margin-bottom: 0.03125rem; border-radius: 0.15625rem 0.15625rem 0 0;margin-top: 0.859375rem;}
+.zhuce .zc_yzm{width: 100%;height: 1.359375rem;border-radius:  0 0 0.15625rem 0.15625rem; background: #fff;}
+.zhuce .zc_yzm input{width: 6.796875rem;height: 1.359375rem; text-indent: 1em; border:none; line-height: 1.359375rem; font-size: 0.46875rem; float: left;}
+.zhuce .zc_yzm #v_container{width: 1.953125rem; height: 0.859375rem;float: left; margin: 0.25rem auto;}
+#verifyCanvas{width: 1.953125rem; height: 0.859375rem;float: left; margin: auto;}
+.zhuce .zc_simt{display: block; width: 100%;border-radius: 0.15625rem; background: #acacac; color: #fff; text-align: center;height: 1.359375rem;line-height: 1.359375rem; font-size: 0.546875rem; margin: 0.625rem 0 0.46875rem;}
+.zhuce .zc_back{display: block; width: 100%;text-align:left; font-size: 0.46875rem; height: 0.546875rem;line-height: 0.546875rem; color: #b4b4b4;}
+
+.zhuce .zc_back2{display: block; width: 100%;text-align: center; font-size: 0.46875rem; height: 0.546875rem;line-height: 0.546875rem; color: #b4b4b4; margin-bottom: 0.3125rem;}
+.zhuce .zc_yzm2{width: 100%;height: 1.359375rem;border-radius: 0.15625rem 0.15625rem 0 0; background: #fff;margin-bottom: 0.03125rem;}
+.zhuce .zc_yzm2 input{width: 6.796875rem;height: 1.359375rem; text-indent: 1em; border:none; line-height: 1.359375rem; font-size: 0.46875rem; float: left;border-radius: 0.15625rem 0.15625rem 0 0;}
+.zhuce .zc_yzm2 .yzms{width: 2.109375rem; height: 0.859375rem;float: left; margin: 0.25rem auto; background: #ff4c4c; color: #fff; border-radius: 0.15625rem; text-align: center; line-height: 0.859375rem; font-size: 0.46875rem;}
+.zhuce .zc_yzm2 .yzman{width: 2.109375rem; height: 0.859375rem;float: left; margin: 0.25rem auto; background: #00b38b; color: #fff; border-radius: 0.15625rem; text-align: center; line-height: 0.859375rem; font-size: 0.25rem;}
+.zhuce .zc_password{width: 100%;height: 1.359375rem; text-indent: 1em; border:none; line-height: 1.359375rem; font-size: 0.46875rem;border-radius:  0 0 0.15625rem 0.15625rem;}
+
+.dlzcImg{display: block; width:4.625rem; height: 2.890625rem; margin-top: 0.625rem; padding-bottom: 4.375rem;}
+
+
+/**发布页**/
+.release_nav{background: #00b38b; padding: 0.15625rem 0.390625rem; margin-top: 1.28125rem;}
+.release_nav p{height: 0.546875rem; line-height: 0.546875rem;}
+.release_nav p a{display: block;float: left; padding: 0 0.15625rem; color: #fff; font-size: 0.40625rem;}
+.release_nav2{background: #f2f2f2; padding: 0.15625rem 0.390625rem; border-bottom: 0.03125rem solid #cccccc;}
+.release_nav2 dl{padding: 0.15625rem 0 0.15625rem 2.5rem;}
+.release_nav2 dl dd{text-align: left; font-size: 0.40625rem;}
+.release_nav2 dl dd p{height: 0.46875rem; line-height: 0.46875rem; padding-left: 0.46875rem; background: url(./assets/tgb29.png) 0rem center / 0.390625rem 0.390625rem no-repeat;}
+.release_nav2 dl dd p.on{background: url(./assets/tgb30.png) 0rem center / 0.390625rem 0.390625rem no-repeat;}
+.release_form{padding:0.46875rem 0 3.59375rem;}
+.release_form .release_form_p1{height: 0.78125rem; line-height: 0.78125rem;font-size: 0.40625rem; margin-bottom: 0.46875rem;padding:0 0.390625rem;}
+.release_form .release_form_p1 span:nth-child(1){display: block;float: left; width: 1.875rem; height: 0.78125rem; line-height: 0.78125rem;}
+.release_form .release_form_p1 span:nth-child(2){display: block;float: left; width: 0.390625rem; height: 0.78125rem; line-height: 0.78125rem;color: #ff0101;}
+.release_form .release_form_p1 input{width: 6.71875rem; height: 0.78125rem; line-height: 0.78125rem; border:0.015625rem solid #ccc;padding: 0;margin: 0; text-indent: 1em;}
+.release_form .release_form_p2{font-size: 0.40625rem; height: 4.765625rem;padding:0 0.390625rem 0.46875rem;}
+.release_form .release_form_p2 span:nth-child(1){display: block;float: left; width: 1.875rem; height: 0.78125rem; line-height: 0.78125rem;}
+.release_form .release_form_p2 span:nth-child(2){display: block;float: left; width: 0.390625rem; height: 0.78125rem; line-height: 0.78125rem;color: #ff0101;}
+.release_form .release_form_p2 textarea{width: 6.71875rem; height: 4.6875rem; line-height: 0.78125rem; border:0.015625rem solid #ccc;padding: 0;margin: 0; text-indent: 1em;font-size: 0.40625rem;}
+.release_form .release_form_p2 samp{position: relative; right: -6.5625rem; bottom: 0.625rem; display: block; width: 2.34375rem; height: 0.46875rem; line-height: 0.46875rem; text-align: center; color: #b4b4b4;}
+.release_form .release_form_p3{ height: 0.78125rem; line-height: 0.78125rem; font-size: 0.40625rem;color: #b4b4b4; border-top: 0.046875rem solid #ccc; padding-left: 0.390625rem; padding-bottom: 0.625rem; }
+.release_form .tijiao{margin: 0 0.390625rem; display: block; width: 9.21875rem; border:none; border-radius: 0.15625rem; background: #00b38b; color: #fff; text-align: center; height: 1.34375rem; line-height: 1.34375rem; font-size: 0.515625rem;}
+
+
+/**个人中心**/
+.release_nav p.zx{font-size: 0.46875rem; color: #fff; text-align: center;}
+.personal{padding: 0.390625rem 0;    border-top: 0.03125rem solid #cccccc;}
+.personal .personal_dl{margin-bottom: 0.3125rem;}
+.personal .personal_dl dd{font-size: 0.4375rem; color: #b8b7b6;}
+.personal .personal_dl dd img{display: block; width: 1.875rem; height: 1.875rem;}
+.personal .personal_dl dd span{display: block; height: 0.46875rem; text-align: center; font-size: 0.4375rem;padding: 0.15625rem 0 0;}
+.personal .personal_dl dd p{padding: 0.78125rem 0.5rem 0;}
+.personal .personal_dl dd p a{font-size: 0.4375rem; display:inline-block; color: #b8b7b6; }
+.personal .personal_dl2{border-bottom: 1px solid #b4b4b4;border-top: 1px solid #b4b4b4; padding: 0.234375rem 0.3125rem;}
+.personal .personal_dl2 dd{height: 2.8125rem; background: url(./assets/tgb32.jpg) right center / 0.03125rem 2.125rem no-repeat;}
+.personal .personal_dl2 dd:last-of-type{background: none;}
+.personal .personal_dl2 dd a{display: block; text-align: center; height: 2.1875rem; line-height: 2.1875rem; color: #00b38b; font-size: 0.65625rem;}
+.personal .personal_dl2 dd span{display: block; font-size: 0.28125rem; color: #969594;text-align: center;}
+.personal .personal_p{ padding: 2.34375rem 0.3125rem 5.0rem; }
+.personal .personal_p a{flex: 1; color: #fff; text-align: center; font-size: 0.515625rem; height: 1.34375rem; line-height: 1.34375rem; background: #00b38b;}
+.personal .personal_p a:nth-child(1){border-radius: 0.15625rem 0 0 0.15625rem;margin-right: 0.078125rem;}
+.personal .personal_p a:nth-child(2){border-radius:0 0.15625rem 0.15625rem 0;}
+
+/** 找回密码 */
+.zhma_p{width: 6.0rem;height: 1.25rem;margin: 1.953125rem auto auto;background: #b8b8b8;border-radius: 0.15625rem; color: #fff; text-align: center; line-height: 1.25rem; font-size: 0.515625rem;}
+.zhma_div{padding: 0.671875rem 0.46875rem;}
+.zhma_div .dl_tel{width: 100%; height: 1.359375rem; text-indent: 1em; border:none; line-height: 1.359375rem; font-size: 0.46875rem;margin-bottom: 0.03125rem; border-radius: 0.15625rem 0.15625rem 0 0; color: #c2c1c1;}
+.zhma_div .dl_password{width: 100%;height: 1.359375rem; text-indent: 1em; border:none; line-height: 1.359375rem; font-size: 0.46875rem;border-radius:  0 0 0.15625rem 0.15625rem;margin-bottom: 0.03125rem; color: #c2c1c1;}
+.zhma_div .dl_password2{width: 100%;height: 1.359375rem; text-indent: 1em; border:none; line-height: 1.359375rem; font-size: 0.46875rem;margin-bottom: 0.03125rem; color: #c2c1c1;}
+.zhma_div .zc_yzm2{width: 100%;height: 1.359375rem;border-radius: 0.15625rem 0.15625rem 0 0; background: #fff;margin-bottom: 0.03125rem; color: #c2c1c1;}
+.zhma_div .zc_yzm2 input{width: 6.796875rem;height: 1.359375rem; text-indent: 1em; border:none; line-height: 1.359375rem; font-size: 0.46875rem; float: left;border-radius: 0.15625rem 0.15625rem 0 0;}
+.zhma_div .zc_yzm2 .yzms{width: 2.109375rem; height: 0.859375rem;float: left; margin: 0.25rem auto; background: #b8b8b8; color: #fff; border-radius: 0.15625rem; text-align: center; line-height: 0.859375rem; font-size: 0.46875rem;}
+.zhma_div .zc_yzm2 .yzman{width: 2.109375rem; height: 0.859375rem;float: left; margin: 0.25rem auto; background: ##b8b8b8; color: #fff; border-radius: 0.15625rem; text-align: center; line-height: 0.859375rem; font-size: 0.25rem;}
+.zhma_a{display: block;width: 100%;border-radius: 0.15625rem;background: #00b38b;color: #fff;text-align: center;height: 1.359375rem;line-height: 1.359375rem;font-size: 0.546875rem;margin: 1.640625rem 0 4.6875rem;}
+
+
+
+/** 首页-底部 **/
+.bottom{padding: 0.15625rem 0 2.34375rem; height: 2.109375rem;}
+.bottom dl{padding: 0 1.5625rem 0.3125rem;}
+.bottom dl dd{flex: 1;}
+.bottom dl dd a{display: block;font-size: 0.421875rem; text-align: center;}
+.bottom dl dd a img{display: block;width: 1.375rem; height: 1.375rem;}
+.bottom p{font-size: 0.265625rem; height: 0.3125rem; text-align: center; color: #b7b6b6;line-height: 0.46875rem;}
+
+/** 首页-底部导航 **/
+.bottom_nav{width: 100%; height: 1.25rem; position:fixed; bottom: 0; border-top: 0.03125rem solid #e0e0e0;background: #fff; max-width:10.0rem;}
+.bottom_nav .a_tag{flex: 1;}
+.bottom_nav .a_tag span{display:block; text-align: center; color:#797979; font-size: 0.390625rem; height: 0.625rem;line-height: 0.625rem;}
+.bottom_nav .a_tag:nth-child(1){margin-top: 0.1875rem;}
+.bottom_nav .a_tag:nth-child(2){margin-top: 0.125rem;}
+.bottom_nav .a_tag:nth-child(1) img{display: block;width: 0.5rem; height: 0.453125rem;}
+.bottom_nav .a_tag:nth-child(2) img{display: block;width:0.484375rem; height: 0.515625rem; }
+
+.bottom_nav2{width: 100%; height: 1.25rem; position:fixed; bottom: 0; border-top: 0.03125rem solid #e0e0e0;background: #fff; max-width: 640px;}
+.bottom_nav2 a{flex: 1;}
+.bottom_nav2 a span{display:block; text-align: center; color:#797979; font-size: 0.390625rem; height: 0.625rem;line-height: 0.625rem;}
+.bottom_nav2 a:nth-child(1){margin-top: 0.1875rem;}
+.bottom_nav2 a:nth-child(3){margin-top: 0.125rem;}
+.bottom_nav2 a:nth-child(2) span{ width: 2.015625rem; margin: auto; display: block;height: 1.5rem; line-height: 2.3rem; background-size:2.015625rem 1.5625rem; color: #fff; background: url(./assets/tgb17.png) 0 0 /2.015625rem 1.5rem no-repeat;; position: relative;bottom: 0.3rem;}
+.bottom_nav2 a:nth-child(2) img{}
+.bottom_nav2 a:nth-child(1) img{display: block;width: 0.5rem; height: 0.453125rem;}
+.bottom_nav2 a:nth-child(3) img{display: block;width:0.484375rem; height: 0.515625rem; }
