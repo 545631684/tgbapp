@@ -136,6 +136,7 @@
 <script>
   import loading from '../components/loading'
   import bottomNav from '../components/bottomNav'
+  import {indexGetData} from '../assets/js/sql'
   import Axios from 'axios'
   export default {
     name: 'index',
@@ -148,25 +149,6 @@
       }
     },
     methods: {
-      getData() {
-        var _this = this
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/list1.html?type=mobile&page=1')
-          .then(function(response) {
-            _this.xqList = response.data
-            // console.log(response.data)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/list2.html?type=mobile&page=1')
-          .then(function(response) {
-            _this.fwList = response.data
-            // console.log(response.data)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
-      },
       articleUrl(id) {
         this.$router.push('/article/' + id) // 跳转文章页
       },
@@ -175,7 +157,7 @@
       }
     },
     created() {
-      this.getData() // 获取服务商、市场需求list
+      indexGetData(this) // 获取服务商、市场需求list
     },
     components: {
       loading,
