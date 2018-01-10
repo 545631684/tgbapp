@@ -14,7 +14,7 @@
 
 <script>
   import Top from '../components/top'
-  import Axios from 'axios'
+  import {article2GetData} from '../assets/js/sql'
   export default {
     name: 'articleList',
     data() {
@@ -24,26 +24,9 @@
       }
     },
     methods: {
-      getData() {
-        var _this = this
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/page1.html?id=' + _this.$route.params.id)
-          .then(function(response) {
-            // console.log(response.data)
-            if (response.data.status === 0) {
-              _this.articles = response.data.data
-            } else if (response.data.status === 1) {
-              _this.articles = response.data.data
-            } else {
-              console.log('加载出错了。。。（*@ο@*）怎么办~！？')
-            }
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
-      }
     },
     created() {
-      this.getData()
+      article2GetData(this)
     },
     components: {
       Top

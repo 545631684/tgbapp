@@ -137,7 +137,6 @@
   import loading from '../components/loading'
   import bottomNav from '../components/bottomNav'
   import {indexGetData} from '../assets/js/sql'
-  import Axios from 'axios'
   export default {
     name: 'index',
     data() {

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import Axios from 'axios'
+  import {articleListGetDatafw, articleListGetDataxq} from '../assets/js/sql'
   import loading from '../components/loading'
   export default {
     name: 'articleList',
@@ -33,47 +33,12 @@
       }
     },
     methods: {
-      getDatafw() {
-        var _this = this
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/list2.html?type=mobile&page=' + _this.page)
-          .then(function(response) {
-            if (response.data != null) {
-              _this.list.push(...response.data)
-              _this.page++
-              _this.loading = true
-            } else {
-              _this.bottomTitle = ''
-            }
-            // console.log(response.data)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
-      },
-      getDataxq() {
-        var _this = this
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/list1.html?type=mobile&page=' + _this.page)
-          .then(function(response) {
-            if (response.data != null) {
-              _this.list.push(...response.data)
-              _this.page++
-              _this.loading = true
-            } else {
-              // console.log(response.data)
-              _this.bottomTitle = ''
-            }
-            // console.log(response.data)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
-      },
       getData(typeName, page) {
         // console.log(typeName)
         if (typeName === '市场需求') {
-          this.getDataxq()
+          articleListGetDataxq(this)
         } else if (typeName === '服务商') {
-          this.getDatafw()
+          articleListGetDatafw(this)
         }
       },
       articleUrl(id) {
@@ -91,9 +56,9 @@
         if (scrollTop + b > clientHeight) {
           if (this.bottomTitle.length !== 0) {
             if (this.typeName === '市场需求') {
-              this.getDataxq()
+              articleListGetDataxq(this)
             } else if (this.typeName === '服务商') {
-              this.getDatafw()
+              articleListGetDatafw(this)
             }
           }
         }
@@ -102,10 +67,10 @@
     created() {
       if (this.$route.params.type === 'xq') {
         this.typeName = '市场需求'
-        this.getDataxq()
+        articleListGetDataxq(this)
       } else if (this.$route.params.type === 'fw') {
         this.typeName = '服务商'
-        this.getDatafw()
+        articleListGetDatafw(this)
       }
     },
     components: {

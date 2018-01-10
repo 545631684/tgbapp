@@ -32,7 +32,7 @@
 
 <script>
   import Top from '../components/top'
-  import Axios from 'axios'
+  import {articleGetData} from '../assets/js/sql'
   export default {
     name: 'articleList',
     data() {
@@ -43,25 +43,6 @@
       }
     },
     methods: {
-      getData() {
-        var _this = this
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/page.html?id=' + _this.$route.params.id)
-          .then(function(response) {
-            console.log(response.data)
-            if (response.data.status === 0) {
-              _this.articles = response.data.data
-              _this.shwz = true
-            } else if (response.data.status === 1) {
-              _this.articles = response.data.data
-            } else {
-              console.log('加载出错了。。。（*@ο@*）怎么办~！？')
-            }
-            // console.log(response.data)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
-      },
       chakan() { // 弹窗显示
         window.location.href = 'http://aso6.197php.com/Wxpay1/example/jsapi.php?id=' + this.$route.params.id + '&uid=' + this.$store.state.uid
         // this.tanchuang = true
@@ -71,7 +52,7 @@
       }
     },
     created() {
-      this.getData()
+      articleGetData(this)
     },
     components: {
       Top

@@ -48,8 +48,7 @@
 
 <script>
 import Top from '../components/top'
-import Axios from 'axios'
-import qs from 'qs'
+import {loginLand, loginregister2, loginGetVerification} from '../assets/js/sql'
 
 // 在全局定义验证码
 var code
@@ -105,21 +104,7 @@ export default {
       } else if (this.dl_password.length === 0) {
         alert('请输入您的密码')
       } else {
-        Axios.post(_this.URLS + '/ThinkPHP/index.php/Home/Index/login.html', qs.stringify({username: _this.dl_tel, password: _this.dl_password}))
-          .then(function(response) {
-            if (response.data.status === 0) {
-              alert('您的用户名或密码错误，请重新输入！')
-            } else if (response.data.status === 1) {
-              alert('登陆成功!')
-              _this.$store.commit('setUsername', response.data.user.username, response.data.user.uid) // 全局用户状态
-              _this.$store.dispatch('setLocalStorage', _this.$store.state) // 本地存储全局用户状态
-              _this.$router.push('/') // 跳转首页
-            }
-            // console.log(response.data)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
+        loginLand(_this)
       }
     },
     // 注册第一步
@@ -146,22 +131,7 @@ export default {
       } else if (this.zc_password.length <= 6) {
         alert('密码必须是6位数的数字加字母')
       } else {
-        Axios.post(_this.URLS + '/ThinkPHP/index.php/Home/Index/reg.html', qs.stringify({username: _this.zc_tel, password: _this.zc_password, getVerifyCode: _this.zc_yzm2}))
-          .then(function(response) {
-            if (response.data.status === 0) {
-              alert('验证码错误，请重新输入！')
-            } else if (response.data.status === 1) {
-              alert('您的手机号已被注册！')
-            } else if (response.data.status === 2) {
-              alert('恭喜您，注册成功！')
-              _this.$router.push('/') // 跳转首页
-            }
-            // console.log(response.data)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
-          // alert('注册成功')
+        loginregister2(_this)
       }
     },
     // 短信验证码读秒
@@ -194,23 +164,7 @@ export default {
     getVerification() {
       var _this = this
       if (_this.zc_tel.length === 11) {
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/regsms.html?phone=' + _this.zc_tel)
-          .then(function(response) {
-            // console.log(response.data)
-            if (response.data.status === 1) {
-              alert('手机号不能为空！')
-            } else if (response.data.status === 2) {
-              alert('手机号已被占用，请更换手机号再注册！')
-            } else if (response.data.status === 3) {
-              alert('短信已发生，请注意查看短信！')
-            } else {
-              alert('系统错误，请重新点击获取验证码！')
-            }
-            // console.log(response.data.status)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
+        loginGetVerification(_this)
       } else {
         alert('请输入手机号')
       }
