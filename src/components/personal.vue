@@ -43,7 +43,7 @@
 
 <script>
 import Top from '../components/top'
-import Axios from 'axios'
+import {personalTuichu, personalGetdataPersonal} from '../assets/js/sql'
 
 export default {
   data() {
@@ -56,42 +56,16 @@ export default {
       alert('相关设置请登陆PC版！')
     },
     tuichu() {
-      var _this = this
-      Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/loginout.html')
-        .then(function(response) {
-          if (response.data.status === 1) {
-            alert('退出成功！')
-            _this.$store.commit('Cancellation', '') // 注销全局用户状态
-            _this.$router.push('/') // 跳转首页
-          } else {
-            alert('退出成功！')
-            _this.$store.commit('Cancellation', '') // 注销全局用户状态
-            _this.$router.push('/') // 跳转首页
-          }
-          // console.log(response.data.status)
-        })
-        .catch(function(error) {
-          console.log(error)
-        })
+      // 注销用户
+      personalTuichu(this)
     },
     getdataPersonal() {
-      var _this = this
-      Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/mobileuser.html')
-        .then(function(response) {
-          if (response.data.status === 1) {
-            _this.users = response.data.data
-          } else {
-            console.log('加载失败。。。重新刷新吧！')
-          }
-          // console.log(response.data)
-        })
-        .catch(function(error) {
-          console.log(error)
-        })
+      // 调取当前用户的所有参数
+      personalGetdataPersonal(this)
     }
   },
   created() {
-    this.getdataPersonal()
+    personalGetdataPersonal(this)
   },
   components: {
     Top

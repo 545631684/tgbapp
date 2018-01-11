@@ -154,3 +154,39 @@ export function loginGetVerification(_this) {
       console.log(error)
     })
 }
+
+// personal.vue 接口  注销
+export function personalTuichu(_this) {
+  Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/loginout.html')
+    .then(function(response) {
+      if (response.data.status === 1) {
+        alert('退出成功！')
+        _this.$store.commit('Cancellation', '') // 注销全局用户状态
+        _this.$router.push('/') // 跳转首页
+      } else {
+        alert('退出成功！')
+        _this.$store.commit('Cancellation', '') // 注销全局用户状态
+        _this.$router.push('/') // 跳转首页
+      }
+      // console.log(response.data.status)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+}
+
+// personal.vue 接口  调用当前用户的各种参数
+export function personalGetdataPersonal(_this) {
+  Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/mobileuser.html')
+    .then(function(response) {
+      if (response.data.status === 1) {
+        _this.users = response.data.data
+      } else {
+        console.log('加载失败。。。重新刷新吧！')
+      }
+      // console.log(response.data)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+}

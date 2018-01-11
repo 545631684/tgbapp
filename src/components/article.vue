@@ -64,7 +64,7 @@
 <style scoped lang="css">
 /** 详情页  **/
 .details{ padding-bottom: 0.3125rem;     padding-top: 1.25rem;}
-.details .details_title{/*padding: 0.4375rem 0;*/height:1.25rem;line-height:1.25rem; background: #fff; text-align: center; font-size: 0.5rem; border-bottom: 1px solid #dddddd;}
+.details .details_title{padding:0.425rem .2rem;/*height:1.25rem;line-height:1.25rem;*/ background: #fff; text-align: center; font-size: 0.5rem; border-bottom: 1px solid #dddddd;}
 .details .auditing_p{padding:0.4375rem 2.03125rem; font-size: 0.46875rem; color: #fd5647; background: #fff8e4; text-align: center;border-bottom: 1px solid #dddddd;}
 .details .auditing_p img{display:inline-block; width:0.46875rem; height: 0.59375rem; padding-right: 0.15625rem; }
 .details div{margin:0.390625rem 0.3125rem 0;border: 1px solid #dddddd;background: #fff;}
