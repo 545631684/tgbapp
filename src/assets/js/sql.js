@@ -190,3 +190,56 @@ export function personalGetdataPersonal(_this) {
       console.log(error)
     })
 }
+
+// personalList.vue 接口  调用当前用户的需求
+export function getdataXqPersonalList(_this) {
+  Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/mylist1.html?page=1')
+    .then(function(response) {
+      _this.loadings = true
+//          console.log('sh:' + response.data.data1)
+//          console.log('wz:' + response.data.data)
+      if (response.data.data === null && response.data.data1 === null) {
+        _this.loadings2 = true
+        _this.loadings = false
+      } else if (response.data.status === 1) {
+        _this.list = response.data.data
+        _this.shList = response.data.data1
+        _this.loadings = false
+      } else {
+        console.log('加载失败。。。重新刷新吧！')
+      }
+      if (response.data.data !== null) {
+        _this.wz = true
+      }
+      if (response.data.data1 !== null) {
+        _this.shwz = true
+      }
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+}
+
+// personalList.vue 接口  调用当前用户的服务
+export function getdataFwPersonalList(_this) {
+  Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/mylist2.html?page=1')
+    .then(function(response) {
+      _this.loadings = true
+      if (response.data.data === null && response.data.data1 === null) {
+        _this.loadings2 = true
+        _this.loadings = false
+      } else if (response.data.status === 1) {
+        _this.list = response.data.data
+        _this.shList = response.data.data1
+        _this.loadings = false
+      } else {
+        console.log('加载失败。。。重新刷新吧！')
+      }
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+}
+
+// release.vue 接口  调用当前用户的服务
+export function getdataFwRelease(_this) {}

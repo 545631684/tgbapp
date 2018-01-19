@@ -38,8 +38,8 @@
 </template>
 
 <script>
-  import Axios from 'axios'
   import loading from '../components/loading'
+  import {getdataXqPersonalList, getdataFwPersonalList} from '../assets/js/sql'
 
   export default {
     data() {
@@ -59,63 +59,15 @@
       },
       examineArticleUrl(id) {
         this.$router.push('/article/' + id) // 跳转审核文章页
-      },
-      getdataXQ() { // 调用需求数据
-        var _this = this
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/mylist1.html?page=1')
-          .then(function(response) {
-            _this.loadings = true
-//          console.log('sh:' + response.data.data1)
-//          console.log('wz:' + response.data.data)
-            if (response.data.data === null && response.data.data1 === null) {
-              _this.loadings2 = true
-              _this.loadings = false
-            } else if (response.data.status === 1) {
-              _this.list = response.data.data
-              _this.shList = response.data.data1
-              _this.loadings = false
-            } else {
-              console.log('加载失败。。。重新刷新吧！')
-            }
-            if (response.data.data !== null) {
-              _this.wz = true
-            }
-            if (response.data.data1 !== null) {
-              _this.shwz = true
-            }
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
-      },
-      getdataFW() { // 调用服务数据
-        var _this = this
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/mylist2.html?page=1')
-          .then(function(response) {
-            _this.loadings = true
-            if (response.data.data === null && response.data.data1 === null) {
-              _this.loadings2 = true
-              _this.loadings = false
-            } else if (response.data.status === 1) {
-              _this.list = response.data.data
-              _this.shList = response.data.data1
-              _this.loadings = false
-            } else {
-              console.log('加载失败。。。重新刷新吧！')
-            }
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
       }
     },
     created() {
       if (this.$route.params.typeName === 'xq') {
         this.typeName = '需求'
-        this.getdataXQ()
+        getdataXqPersonalList(this)
       } else if (this.$route.params.typeName === 'fw') {
         this.typeName = '服务'
-        this.getdataFW()
+        getdataFwPersonalList(this)
       }
     },
     components: {
