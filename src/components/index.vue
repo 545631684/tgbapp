@@ -130,11 +130,13 @@
         </router-link>
     </div>-->
     <bottomNav></bottomNav>
+    <fixedTel></fixedTel>
   </div>
 </template>
 
 <script>
   import loading from '../components/loading'
+  import fixedTel from '../components/fixedTel'
   import bottomNav from '../components/bottomNav'
   import {indexGetData} from '../assets/js/sql'
   export default {
@@ -160,7 +162,8 @@
     },
     components: {
       loading,
-      bottomNav
+      bottomNav,
+      fixedTel
     }
   }
 </script>

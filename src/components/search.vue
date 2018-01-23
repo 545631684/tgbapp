@@ -36,6 +36,7 @@
         <loading v-show="loadings"></loading>
       </div>
     </div>
+    <fixedTel></fixedTel>
   </div>
 </template>
 
@@ -43,6 +44,7 @@
   import Axios from 'axios'
   import {formatDate} from '../assets/js/api'
   import loading from '../components/loading'
+  import fixedTel from '../components/fixedTel'
   export default {
     name: 'articleList',
     data() {
@@ -122,7 +124,8 @@
     created() {
     },
     components: {
-      loading
+      loading,
+      fixedTel
     }
   }
 </script>

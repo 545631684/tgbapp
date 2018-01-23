@@ -34,11 +34,13 @@
       </li>
     </ul>
     <loading v-show="loadings"></loading>
+    <fixedTel></fixedTel>
   </div>
 </template>
 
 <script>
   import loading from '../components/loading'
+  import fixedTel from '../components/fixedTel'
   import {getdataXqPersonalList, getdataFwPersonalList} from '../assets/js/sql'
 
   export default {
@@ -71,7 +73,8 @@
       }
     },
     components: {
-      loading
+      loading,
+      fixedTel
     }
   }
 </script>

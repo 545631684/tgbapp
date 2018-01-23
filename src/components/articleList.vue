@@ -15,12 +15,14 @@
       <li @click="getData(typeName, page)" v-show="loading" id="an"><p class="list_title clear" style="text-align: center;font-size: 0.4375rem;">{{bottomTitle}}</p></li>
       <loading v-show="!list.length"></loading>
     </ul>
+    <fixedTel></fixedTel>
   </div>
 </template>
 
 <script>
   import {articleListGetDatafw, articleListGetDataxq} from '../assets/js/sql'
   import loading from '../components/loading'
+  import fixedTel from '../components/fixedTel'
   export default {
     name: 'articleList',
     data() {
@@ -74,7 +76,8 @@
       }
     },
     components: {
-      loading
+      loading,
+      fixedTel
     }
   }
 </script>
