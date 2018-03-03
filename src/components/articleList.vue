@@ -9,7 +9,7 @@
                 <span>{{item.task_title}}</span>
                 <a>查看更多</a>
             </p>
-            <p class="list_content omit3">{{item.task_desc}}</p>
+            <p class="list_content omit3" v-html="item.task_desc"></p>
           </a>
       </li>
       <li @click="getData(typeName, page)" v-show="loading" id="an"><p class="list_title clear" style="text-align: center;font-size: 0.4375rem;">{{bottomTitle}}</p></li>
