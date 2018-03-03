@@ -59,7 +59,7 @@
               <span class="fl">置顶</span>
               <samp class="fl">{{item.task_title}}</samp>
             </p>
-            <p>需求描述:{{item.task_desc}}</p>
+            <p v-html="item.task_desc"></p>
           </a>
         </li>
       </ul>
@@ -78,7 +78,7 @@
               <span class="fl">置顶</span>
               <samp class="fl">{{item.task_title}}</samp>
             </p>
-            <p>{{item.task_desc}}</p>
+            <p v-html="item.task_desc"></p>
           </a>
         </li>
       </ul>

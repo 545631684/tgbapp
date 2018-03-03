@@ -4,8 +4,8 @@
     <div class="details">
       <p class="details_title">{{articles.task_title}}</p>
       <p class="auditing_p" v-show="shwz"><img src="../assets/img/tgb42.png" alt="">需求已提交，请等待审核</p>
-      <div>
-        <p class="details_content">{{articles.task_desc}}</p>
+      <div class="details_content" >
+        <p v-html="articles.task_desc">{{articles.task_desc}}</p>
       </div>
       <a @click="chakan()">查看联系方式</a>
     </div>
@@ -67,8 +67,8 @@
 .details .details_title{padding:0.425rem .2rem;/*height:1.25rem;line-height:1.25rem;*/ background: #fff; text-align: center; font-size: 0.5rem; border-bottom: 1px solid #dddddd;}
 .details .auditing_p{padding:0.4375rem 2.03125rem; font-size: 0.46875rem; color: #fd5647; background: #fff8e4; text-align: center;border-bottom: 1px solid #dddddd;}
 .details .auditing_p img{display:inline-block; width:0.46875rem; height: 0.59375rem; padding-right: 0.15625rem; }
-.details div{margin:0.390625rem 0.3125rem 0;border: 1px solid #dddddd;background: #fff;}
-.details div .details_content{padding: 0.15625rem; text-align:justify; line-height: 1.5; font-size: 0.4375rem; min-height: 10.59375rem; color: #666666;}
+.details .details_content{margin:0.390625rem 0.3125rem 0;border: 1px solid #dddddd;background: #fff;}
+.details .details_content p{padding: 0.15625rem; text-align:justify; line-height: 1.5; font-size: 0.4375rem; min-height: 10.59375rem; color: #666666;}
 .details a{position: fixed; bottom: 0; display: block; margin:0.3125rem; color: #ffffff; text-align: center; font-size: 0.421875rem; padding: 0.3125rem 0; background: #00b188; width: 9.375rem;}
 
 .details_tc{position: absolute;top: 0; width: 100%; height: 100%; background: url(../assets/img/tgb41.png) right; z-index: 9999;}
