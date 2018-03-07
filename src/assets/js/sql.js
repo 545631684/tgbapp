@@ -241,5 +241,58 @@ export function getdataFwPersonalList(_this) {
     })
 }
 
-// release.vue 接口  调用当前用户的服务
-export function getdataFwRelease(_this) {}
+// release.vue 接口  提交发布信息 服务/需求
+export function postdata(_this) {
+  Axios.post(_this.URLS + '/ThinkPHP/index.php/Home/Index/new1.html', qs.stringify({title: _this.title, team: _this.team, content: _this.content, username: _this.$store.state.username || _this.zc_tel, phone: _this.$store.state.username || _this.zc_tel}))
+    .then(function(response) {
+      if (response.data.status === 0) {
+        alert('请先登陆后在来发布信息！')
+      } else {
+        alert('您的信息发布成功！')
+        _this.$router.push('/releaseSuccess/') // 跳转首页
+      }
+      // console.log(response.data.status)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+}
+
+// release.vue 接口  获取短信验证码
+export function verification(_this) {
+  Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/regsms.html?isstatus=1&phone=' + _this.zc_tel)
+    .then(function(response) {
+      // console.log(response.data)
+      if (response.data.status === 1) {
+        alert('手机号不能为空！')
+      } else if (response.data.status === 2) {
+        alert('手机号已被占用，请更换手机号再注册！')
+      } else if (response.data.status === 3) {
+        alert('短信已发送，请注意查看短信！')
+      } else {
+        alert('系统错误，请稍后重新点击获取验证码！')
+      }
+      // console.log(response.data.status)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+}
+
+// release.vue 接口  注册
+export function addRegister(_this) {
+  Axios.post(_this.URLS + '/ThinkPHP/index.php/Home/Index/reg.html', qs.stringify({username: _this.zc_tel, password: _this.zc_tel, getVerifyCode: _this.zc_yzm2}))
+    .then(function(response) {
+      if (response.data.status === 0) {
+        alert('验证码错误，请重新输入！')
+      } else if (response.data.status === 1) {
+        postdata(_this)
+      } else if (response.data.status === 2) {
+        postdata(_this)
+      }
+      // console.log(response.data)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+}

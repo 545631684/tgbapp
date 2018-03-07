@@ -68,8 +68,7 @@
 
 <script>
 import Top from '../components/top'
-import Axios from 'axios'
-import qs from 'qs'
+import {postdata, verification, addRegister} from '../assets/js/sql'
 
 // 在全局定义验证码
 var code
@@ -124,24 +123,8 @@ export default {
       } else if (this.$route.params.name === 'yjfb') {
         _this.release_tc = true
       } else {
-        this.postdata(_this)
+        postdata(_this)
       }
-    },
-    postdata(mythis) {
-      console.log(mythis.team)
-      Axios.post(mythis.URLS + '/ThinkPHP/index.php/Home/Index/new1.html', qs.stringify({title: mythis.title, team: mythis.team, content: mythis.content, username: mythis.$store.state.username || mythis.zc_tel, phone: mythis.$store.state.username || mythis.zc_tel}))
-        .then(function(response) {
-          if (response.data.status === 0) {
-            alert('请先登陆后在来发布信息！')
-          } else {
-            alert('您的信息发布成功！')
-            mythis.$router.push('/releaseSuccess/') // 跳转首页
-          }
-          // console.log(response.data.status)
-        })
-        .catch(function(error) {
-          console.log(error)
-        })
     },
     // 图片验证码
     createCode() {
@@ -170,44 +153,13 @@ export default {
       } else if (!(/^1[3|4|5|7|8]\d{9}$/.test(_this.zc_tel))) {
         alert('您的手机号输入有误，请重新输入')
       } else {
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/regsms.html?isstatus=1&phone=' + _this.zc_tel)
-          .then(function(response) {
-            // console.log(response.data)
-            if (response.data.status === 1) {
-              alert('手机号不能为空！')
-            } else if (response.data.status === 2) {
-              alert('手机号已被占用，请更换手机号再注册！')
-            } else if (response.data.status === 3) {
-              alert('短信已发送，请注意查看短信！')
-            } else {
-              alert('系统错误，请稍后重新点击获取验证码！')
-            }
-            // console.log(response.data.status)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
+        verification(_this)
       }
     },
     // 注册
     register() {
       var _this = this
-      Axios.post(_this.URLS + '/ThinkPHP/index.php/Home/Index/reg.html', qs.stringify({username: _this.zc_tel, password: _this.zc_tel, getVerifyCode: _this.zc_yzm2}))
-        .then(function(response) {
-          if (response.data.status === 0) {
-            alert('验证码错误，请重新输入！')
-          } else if (response.data.status === 1) {
-            // alert('您的手机号已被注册！')
-            _this.postdata(_this)
-          } else if (response.data.status === 2) {
-            _this.postdata(_this)
-          }
-          // console.log(response.data)
-        })
-        .catch(function(error) {
-          console.log(error)
-        })
-        // alert('注册成功')
+      addRegister(_this)
     },
     oneRelease() { // 一键发布 注册-发布信息
       var _this = this

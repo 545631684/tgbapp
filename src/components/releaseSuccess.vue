@@ -38,7 +38,7 @@
               <span class="fl">置顶</span>
               <samp class="fl">{{item.task_title}}</samp>
             </p>
-            <p>需求描述:{{item.task_desc}}</p>
+            <p v-html="item.task_desc"></p>
           </a>
         </li>
       </ul>
@@ -57,7 +57,7 @@
               <span class="fl">置顶</span>
               <samp class="fl">{{item.task_title}}</samp>
             </p>
-            <p>{{item.task_desc}}</p>
+            <p v-html="item.task_desc"></p>
           </a>
         </li>
       </ul>
@@ -89,7 +89,7 @@
   import top from '../components/top'
   import bottomNav from '../components/bottomNav'
   import loading from '../components/loading'
-  import Axios from 'axios'
+  import {indexGetData} from '../assets/js/sql'
   export default {
     name: 'index',
     data() {
@@ -100,23 +100,7 @@
     },
     methods: {
       getData() {
-        var _this = this
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/list1.html?type=mobile&page=1')
-          .then(function(response) {
-            _this.xqList = response.data
-            // console.log(response.data)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
-        Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/list2.html?type=mobile&page=1')
-          .then(function(response) {
-            _this.fwList = response.data
-            // console.log(response.data)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
+        indexGetData(this)
       },
       articleUrl(id) {
         this.$router.push('/article/' + id) // 跳转文章页
