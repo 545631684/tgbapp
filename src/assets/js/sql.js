@@ -296,3 +296,31 @@ export function addRegister(_this) {
       console.log(error)
     })
 }
+
+// retrievalPassword.vue 接口  修改密码
+export function setPassword(_this) {
+  Axios.post(_this.URLS + '/ThinkPHP/index.php/Home/Index/backPassword.html', qs.stringify({phone: _this.zh_tel, getVerifyCode: _this.zh_yzm, newpass: _this.zh_password1, newpassback: _this.zh_password2}))
+    .then(function(response) {
+      // console.log(response.data)
+      if (response.data.status === 0) {
+        alert('请输入手机号！')
+      } else if (response.data.status === 1) {
+        alert('请输入验证码！')
+      } else if (response.data.status === 2) {
+        alert('验证码验证错误！')
+      } else if (response.data.status === 3) {
+        alert('两次密码输入不一致！')
+      } else if (response.data.status === 4) {
+        alert('用户不存在！')
+      } else if (response.data.status === 5) {
+        alert('修改成功！')
+        _this.$router.push('/') // 跳转首页
+      }
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+}
+
+// retrievalPassword.vue 接口  获取短信验证码
+export function getVerification2(_this) {}
