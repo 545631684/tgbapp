@@ -3,7 +3,7 @@
     <a href="tel:4008271521">
       <img src="../assets/img/tgb46.jpg" alt="" class="tles" />
     </a>
-    <a @click="top">
+    <a @click='top' >
       <img src="../assets/img/tgb47.jpg" alt="" class="fanhuitop" />
     </a>
   </div>
@@ -18,8 +18,15 @@
     },
     methods: {
       top() {
-        document.body.scrollTop = 0
-        document.documentElement.scrollTop = 0
+        // 获取当前最外围document的scrollTop，返回顶部
+        var timer = setInterval(function() {
+          var top = document.body.scrollTop || document.documentElement.scrollTop
+          var speed = Math.ceil(top / 5)
+          document.body.scrollTop = document.documentElement.scrollTop = top - speed
+          if (top === 0) {
+            clearInterval(timer)
+          }
+        }, 20)
       }
     }
   }
