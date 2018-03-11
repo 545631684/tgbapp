@@ -323,4 +323,44 @@ export function setPassword(_this) {
 }
 
 // retrievalPassword.vue 接口  获取短信验证码
-export function getVerification2(_this) {}
+export function getTelVerification2(_this) {
+  Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/regsms1.html?phone=' + _this.zh_tel)
+    .then(function(response) {
+      if (response.data.status === 1) {
+        alert('手机号不能为空！')
+      } else if (response.data.status === 2) {
+        alert('用户不存在！')
+      } else if (response.data.status === 3) {
+        alert('短信发送成功，请注意查收')
+      }
+      // console.log(response.data.status)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+}
+
+// search.vue 接口  获取搜索结果
+export function getSearchData(type, keyword, mythis) {
+  Axios.get(mythis.URLS + '/ThinkPHP/index.php/Home/Index/sou.html?type=' + type + '&keyword=' + keyword)
+    .then(function(response) {
+      mythis.list = response.data
+      mythis.startAN = false // 搜索按钮
+      mythis.cancelAN = true // 取消按钮
+      mythis.initial = false // 搜索前显示页面
+      mythis.result = true // 搜索后结果页面
+      mythis.loadings = true // 加载效果
+      if (response.data === null) {
+        mythis.loadings = false
+        console.log('后台没有数据...')
+      } else if (response.data.length > 0) {
+        mythis.loadings = false
+      } else {
+        console.log('后台出错没有获取到，悲剧了...')
+      }
+      // console.log(response.data)
+    })
+    .catch(function(error) {
+      console.log(error)
+    })
+}

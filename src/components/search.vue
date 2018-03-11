@@ -20,11 +20,11 @@
       <div class="search_div4" v-show="result">
         <ul class="search_ul">
           <li v-for="item in list">
-            <a @click="articleUrl(item.task_id)">
+            <a :href="'#/article/' + item.task_id">
               <p class="list_title clear">
                 <img src="../assets/img/tgb35.png" alt="">
                 <span>{{item.task_title}}</span>
-                <router-link tag="a"  to="/:item.task_id">查看更多</router-link>
+                <a >查看更多</a>
               </p>
               <p class="list_content omit3">{{formatDate(item.start_time)}}</p>
             </a>
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-  import Axios from 'axios'
+  import {getSearchData} from '../assets/js/sql'
   import {formatDate} from '../assets/js/api'
   import loading from '../components/loading'
   import fixedTel from '../components/fixedTel'
@@ -70,35 +70,12 @@
           this.searchFw = true
         }
       },
-      getData(type, keyword, mythis) { // 获取搜索结果
-        Axios.get(mythis.URLS + '/ThinkPHP/index.php/Home/Index/sou.html?type=' + type + '&keyword=' + keyword)
-          .then(function(response) {
-            mythis.list = response.data
-            mythis.startAN = false // 搜索按钮
-            mythis.cancelAN = true // 取消按钮
-            mythis.initial = false // 搜索前显示页面
-            mythis.result = true // 搜索后结果页面
-            mythis.loadings = true // 加载效果
-            if (response.data === null) {
-              mythis.loadings = false
-              console.log('后台没有数据...')
-            } else if (response.data.length > 0) {
-              mythis.loadings = false
-            } else {
-              console.log('后台出错没有获取到，悲剧了...')
-            }
-            // console.log(response.data)
-          })
-          .catch(function(error) {
-            console.log(error)
-          })
-      },
       start() { // 搜索按钮
         var _this = this
         if (_this.searchXq === true) {
-          _this.getData('0', _this.keyword, _this)
+          getSearchData('0', _this.keyword, _this)
         } else if (_this.searchFw === true) {
-          _this.getData('1', _this.keyword, _this)
+          getSearchData('1', _this.keyword, _this)
         }
       },
       cancel() { // 取消按钮

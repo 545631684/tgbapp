@@ -23,8 +23,7 @@
 
 <script>
   import Top from '../components/top'
-  import Axios from 'axios'
-  import {setPassword} from '../assets/js/sql'
+  import {setPassword, getTelVerification2} from '../assets/js/sql'
   export default {
     data() {
       return {
@@ -58,20 +57,7 @@
       getVerification() {
         var _this = this
         if ((/^1[3|4|5|7|8]\d{9}$/.test(_this.zh_tel))) {
-          Axios.get(_this.URLS + '/ThinkPHP/index.php/Home/Index/regsms1.html?phone=' + _this.zh_tel)
-            .then(function(response) {
-              if (response.data.status === 1) {
-                alert('手机号不能为空！')
-              } else if (response.data.status === 2) {
-                alert('用户不存在！')
-              } else if (response.data.status === 3) {
-                alert('短信发送成功，请注意查收')
-              }
-              // console.log(response.data.status)
-            })
-            .catch(function(error) {
-              console.log(error)
-            })
+          getTelVerification2(_this)
         } else if (_this.zh_tel.length === 0) {
           alert('请输入手机号！')
         } else if (!(/^1[3|4|5|7|8]\d{9}$/.test(_this.zh_tel))) {
