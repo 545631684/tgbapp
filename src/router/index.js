@@ -12,6 +12,7 @@ import Article from '@/components/article'
 import Article2 from '@/components/article2'
 import PersonalList from '@/components/personalList'
 import ReleaseSuccess from '@/components/releaseSuccess'
+import Ranking from '@/components/ranking'
 
 Vue.use(Router)
 
@@ -95,6 +96,10 @@ export default new Router({
     {// 发布成功
       path: '/releaseSuccess/',
       component: ReleaseSuccess
+    },
+    {// 关键词排名
+      path: '/ranking/',
+      component: Ranking
     }
   ],
   scrollBehavior (to, from, savedPosition) { // 保证每次跳转页面，当前视区在头部置顶处
