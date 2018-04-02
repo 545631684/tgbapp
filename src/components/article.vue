@@ -44,7 +44,7 @@
     },
     methods: {
       chakan() { // 弹窗显示
-        window.location.href = 'http://aso6.197php.com/Wxpay1/example/jsapi.php?id=' + this.$route.params.id + '&uid=' + this.$store.state.uid
+        window.location.href = 'http://wx1.197php.com/Wxpay1/example/jsapi.php?id=' + this.$route.params.id + '&uid=' + this.$store.state.uid
         // this.tanchuang = true
       },
       guanbi() { // 弹窗关闭
