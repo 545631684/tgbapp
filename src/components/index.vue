@@ -40,12 +40,38 @@
         </router-link>
       </dd>
     </dl>
+    <dl class="navs flex" style="border-top: 0.015625rem solid #bacad7; ">
+      <dd>
+        <router-link tag="a" to="/">
+          <img src="../assets/img/tgb48.png">
+          <span>数据统计</span>
+        </router-link>
+      </dd>
+      <dd>
+        <router-link tag="a" to="/">
+          <img src="../assets/img/tgb49.png">
+          <span>下单专区</span>
+        </router-link>
+      </dd>
+      <dd>
+        <router-link tag="a" to="/">
+          <img src="../assets/img/tgb50.png">
+          <span>服务报价</span>
+        </router-link>
+      </dd>
+      <dd>
+        <router-link tag="a" to="/">
+          <img src="../assets/img/tgb51.png">
+          <span>资讯干货</span>
+        </router-link>
+      </dd>
+    </dl>
     <!-- 首页广告图 -->
-    <div class="banner2">
+    <!--<div class="banner2">
       <a href="">
         <img src="../assets/img/tgb08.jpg">
       </a>
-    </div>
+    </div>-->
     <!-- 首页-市场需求 -->
     <div class="scxq" v-cloak>
       <div class="scxq_nav">
@@ -203,12 +229,13 @@
   .banner p:nth-child(2) {
     width: 9.203125rem;
     margin: 0 0.375rem 0.234375rem;
-    background: #f9564d;
+    background: #00bc8a;
     height: 1.078125rem;
     border-radius: 0.78125rem;
   }
   
   .banner p:nth-child(2) input {
+    color: #a9a9a9;
     display: block;
     width: 6.921875rem;
     height: 0.984375rem;
